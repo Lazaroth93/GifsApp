@@ -1,2 +1,9 @@
 <h5>Buscar:</h5>
-      <input type="text" class="form-control" placeholder="buscar gifs...">
+<!--   en este inputo nos quedamos con el estring que haya en la caja de texto una vez se suelte la tecla enter -->
+      <input 
+            type="text" 
+            class="form-control" 
+            placeholder="buscar gifs..."
+            (keyup.enter)="buscar(  )" 
+            #txtBuscar
+            >
