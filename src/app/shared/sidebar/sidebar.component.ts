@@ -14,5 +14,11 @@ export class SidebarComponent {
 
   constructor(private GifsService:GifsService) { }
 
+  buscar ( termino:string) {  //enlazamos el boton de busquedas para volver a mostrar las imagenes desde el sidebar 
+    this.GifsService.buscarGifs ( termino );
+  
+
+  }
+
 
 }
