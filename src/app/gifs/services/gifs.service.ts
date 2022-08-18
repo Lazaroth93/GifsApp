@@ -25,7 +25,8 @@ export class GifsService {
   constructor(private http:HttpClient){  // realizamos la llamada a la API gifs para realizar las buquedas 
     
     this._historial = JSON.parse (localStorage.getItem('historial')!)! || []
-    
+    this.resultados = JSON.parse (localStorage.getItem('resultados')!)! || []
+
     //Estas dos lineas de abajo equivalen a la linea de arriba
     // if( localStorage.getItem('historial')) {
      // this._historial = JSON.parse( localStorage.getItem('historial')! );
@@ -45,15 +46,17 @@ export class GifsService {
           this._historial.unshift (query);
     //aseguramos que no se dupliquen las busquedas
     this._historial = this._historial.splice (0,10); //cortamos la inserccion en un maximo de 10 busquedass
-    }
+    
     localStorage.setItem('historial', JSON.stringify( this.historial )  );
+    
+  }
     //estas peticiones http retornan observables podemos añadir funcionalidades a la hora de hacer la peticion
     this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=fnUN8gkl1b8hG0AB5ZzlHqTE1AQvNrrz&q=${ query } &limit=10`)
             .subscribe ( (resp) =>{
               console.log (resp.data);
               this.resultados = resp.data;
-              resp.pagination
-            })
+              localStorage.setItem('resultados', JSON.stringify( this.resultados)  );
+            });
 
 
 
