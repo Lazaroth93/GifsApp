@@ -5,11 +5,15 @@
     </h3>
     <hr class="text-white">
     <div class="List-goup list-reset">
-      <a href="#"
+      <a *ngFor="let item of historial"
+      
+      href="#"
       class="list-group-item  list-group-item-action">
-        Dashboard
+        {{ item  |titlecase}}     <!--con el pipe  title case capitlizamos la primera letra de cada palabra -->
+      
+      
       </a>
-
+  
     </div>
     
   </div>
