@@ -11,7 +11,7 @@ export class BusquedaComponent  {
 
   @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;//DOCUMENTACIO TYPESCRIPT https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator
   
-  constructor (private GifsService: GifsService){}
+  constructor ( private GifsService: GifsService ){}
 
   buscar() {
     const valor = this.txtBuscar.nativeElement.value;

@@ -11,9 +11,9 @@ export class ResultadosComponent
  {
 
   get resultados () {
-    return this.GifsService.resultados;
+    return this.gifsService.resultados;
   }
 
 
-  constructor ( private GifsService: GifsService ){}
+  constructor ( private gifsService: GifsService ){}
 }

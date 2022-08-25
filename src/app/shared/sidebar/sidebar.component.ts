@@ -9,13 +9,13 @@ import { GifsService } from '../../gifs/services/gifs.service';
 export class SidebarComponent {
 
   get historial(){
-    return this.GifsService.historial;
+    return this.gifsService.historial;
   }
 
-  constructor(private GifsService:GifsService) { }
+  constructor(private gifsService:GifsService) { }
 
   buscar ( termino:string) {  //enlazamos el boton de busquedas para volver a mostrar las imagenes desde el sidebar 
-    this.GifsService.buscarGifs ( termino );
+    this.gifsService.buscarGifs ( termino );
   
 
   }
