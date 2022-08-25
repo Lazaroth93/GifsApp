@@ -14,6 +14,7 @@ export class BusquedaComponent  {
   constructor ( private GifsService: GifsService ){}
 
   buscar() {
+    
     const valor = this.txtBuscar.nativeElement.value;
 
     if( valor.trim().length == 0){ //si presionamos enter con el inoput vacio no devolvemos nada s
